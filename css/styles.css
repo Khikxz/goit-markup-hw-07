@@ -1,3 +1,8 @@
+h1, h2, p, ul{
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     /*------------ PALETTE ---------------*/
     --navyblue: #2E2F42;
@@ -20,10 +25,37 @@ ul {
 
 /*----------------- CONTAINER -----------------*/
 .container {
-    width:1158px;
-    margin-left: auto;
-    margin-right: auto; 
+    width: 1128px;
+    margin: 0 auto;
+    display: flex;
 }
+
+.header-container{
+    justify-content: space-between;
+}
+
+.board-container{
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.activity-container, .team-container{
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+}
+
+.filter-container{
+    justify-content: center;
+}
+
+.footer-container{
+    flex-direction: column;
+    padding: 100px 0;
+    gap: 17.5px;
+}
+
 
 /*----------------- LOGO -----------------*/
 .logo {
@@ -42,11 +74,11 @@ ul {
 /*----------------- HEADER -----------------*/
 .header {
     background: var(--white);
-    border-bottom: 1px solid #E7E9FC;
+    border-bottom: 1px solid var(--cornflower);
+    padding: 24px 0;
     flex-direction: row;
     display: flex;
     align-items: baseline;
-    height: 72px;
     flex-shrink: 0;
 }
 
@@ -60,16 +92,8 @@ ul {
 }
 
 .nav-list{
-    display: inline-flex;
-    padding: 0px;
-}
-
-.nav-list-item {
-    padding-right: 40px;
-}
-
-.nav-list-item:last-child{
-    padding: 0;
+    display: flex;
+    gap: 40px;
 }
 
 .nav-list-item-link {
@@ -87,18 +111,14 @@ ul {
 }
 
 .address {
-    display: inline-flex;
-    padding-left: 332px;
+    display: flex;
+    gap: 40px;
 }
 
 .address-link {
     color: var(--slate);
     font-style: normal;
     padding-right: 40px;
-}
-
-.address-link:last-child{
-    padding: 0;
 }
 
 .address-link:hover,
@@ -114,7 +134,6 @@ ul {
 
 .footer-link {
     color: var(--cloud);
-    padding-top: 100px;
     display: block;
 }
 
@@ -124,7 +143,6 @@ ul {
     font-size: 16px;
     line-height: 1.5em;
     letter-spacing: 0.32px;
-    padding-bottom: 100px;
     width: 268px;
 }
 
@@ -154,8 +172,7 @@ ul {
     font-size: 56px;
     line-height: 1.07em;
     letter-spacing: 1.12px;
-    margin: 0px 316px;
-    padding-top: 68px;
+    width: 496px;
 }
 
 .board-button {
@@ -169,7 +186,6 @@ ul {
     gap: 10px;
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    margin: 48px 500px 68px;
 
     /*BUTTON TEXT*/
     color: var(--white);
@@ -190,25 +206,20 @@ ul {
     background: var(--ocean);
 }
 
-.details-features-content-list {
+.features .features-list {
     line-height: 24px;
-    display: inline-flex;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    gap: 24px;
 }
 
-.details-features-content-list-item{
-    padding-right: 24px;
-}
-
-.details-features-content-list-item-heading {
+.features-list-item-heading {
     font-weight: 500;
     font-size: 20px;
     letter-spacing: 0.4px;
     line-height: 1.2em;
 }
 
-.details-features-content-list-item-paragraph {
+.features-list-item-paragraph {
     color: var(--slate);
     font-size: 16px;
     letter-spacing: 0.32px;
@@ -216,25 +227,21 @@ ul {
     width: 264px;
 }
 
-.details-activity {
+.activity {
     text-align: center;
+    padding-top: 0;
 }
 
-.details-activity-heading {
+.activity-heading {
     font-size: 36px;
     line-height: 1.11em;
     letter-spacing: 0.72px;
-    margin: 120px 0px 72px;
     text-transform: capitalize;
 }
 
-.details-activity-list {
-    display: inline-flex;
-    padding: 0;
-}
-
-.details-activity-list-item{
-    padding-right: 24px;
+.activity-list {
+    display: flex;
+    gap: 24px;
 }
 
 .team {
@@ -248,22 +255,17 @@ ul {
     line-height: 1.11em;
     letter-spacing: 0.72px;
     text-transform: capitalize;
-    padding-bottom: 72px;
 }
 
 .team-list{
-    padding: 0;
-}
-
-.team-list-item:last-child{
-    margin: 0;
+    display: flex;
+    gap: 24px;
 }
 
 .team-list-item {
     background: var(--white);
     display: inline-flex;
     flex-direction: column;
-    margin-right: 24px;
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
@@ -290,21 +292,23 @@ ul {
 }
 
 /*----------------- PORTFOLIO PAGE -----------------*/
-.portfolio{
-    padding-top: 96px;
+
+.filter{
+    padding: 96px 0 72px;
 }
 
-.portfolio-filter-list {
-    align-items: center;
+.filter-list {
+   align-items: center;
     justify-content: center;
     display: flex;
+    gap: 24px;
 }
 
-.portfolio-filter-list-item{
-    padding-right: 24px;
+.filter-list-item{
+ /*   padding-right: 24px;*/
 }
 
-.portfolio-filter-list-item-button {
+.filter-list-item-button {
     background: var(--cloud);
     border: 1px solid var(--cornflower);
     border-radius: 4px;
@@ -320,7 +324,7 @@ ul {
     text-align: center;
 }
 
-.portfolio-filter-list-item-button:hover {
+.filter-list-item-button:hover {
     cursor: pointer;
     background: var(--ocean);
     border-color: var(--iris);
@@ -335,39 +339,32 @@ ul {
     letter-spacing: 0.64px;
 }
 
-.portfolio-filter-list-item-button:focus {
+.filter-list-item-button:focus {
     background: var(--ocean);
 }
 
-.portfolio .portfolio-project-list {
-    padding: 0;
+.project{
+    padding-top: 0;
 }
 
-.portfolio .portfolio-filter-list:last-child{
-    margin-right: 0;
+.project-list-row {
+    display: flex;
+    gap: 24px;
 }
 
-.portfolio .portfolio-project-list-item {
+.project-list-item {
     background: var(--white);
     border-bottom: 1px solid var(--cornflower);
-    margin: 24px 24px 24px 0px;
+    margin: 24px 0;
     width: 360px;
-    box-sizing: content-box;
-    display: inline-block;
-    flex-direction: column;
-    align-items: flex-start;
     flex-shrink: 0;
 }
 
-.portfolio .portfolio-project-list-item:last-child{
-    margin-right: 0;
-}
-
-.portfolio-project-list-item-holder {
+.project-list-item-holder {
     padding: 32px 16px;
 }
 
-.portfolio-project-list-item-holder-heading {
+.project-list-item-holder-heading {
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2em;
@@ -376,7 +373,7 @@ ul {
     margin: 0;
 }
 
-.portfolio-project-list-item-holder-paragraph {
+.project-list-item-holder-paragraph {
     color: var(--slate);
     font-size: 16px;
     line-height: 1.5em;
