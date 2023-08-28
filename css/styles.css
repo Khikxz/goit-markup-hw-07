@@ -1,4 +1,4 @@
-h1, h2, p, ul{
+h1, h2, h3, p, ul{
     margin: 0;
     padding: 0;
 }
@@ -15,12 +15,18 @@ h1, h2, p, ul{
 }
 
 /*--------------------------------------------*/
-a {
+a{
     text-decoration: none;
 }
 
-ul {
+ul{
     list-style: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /*----------------- CONTAINER -----------------*/
@@ -84,11 +90,11 @@ ul {
 
 .header-link {
     color: var(--navyblue);
-    margin-right: 76px;
 }
 
 .nav{
     display: inline-flex;
+    gap: 76px;
 }
 
 .nav-list{
@@ -118,7 +124,6 @@ ul {
 .address-link {
     color: var(--slate);
     font-style: normal;
-    padding-right: 40px;
 }
 
 .address-link:hover,
@@ -151,7 +156,6 @@ ul {
     /*------------ DEFAULTS ---------------*/
     color: var(--navyblue);
     font-family: 'Roboto', sans-serif;
-    width: 1440px;
 }
 
 /*----------------- SECTION -----------------*/
@@ -210,6 +214,12 @@ ul {
     line-height: 24px;
     display: flex;
     gap: 24px;
+}
+
+.features-list-item{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .features-list-item-heading {
@@ -280,7 +290,7 @@ ul {
     line-height: 1.2em;
     letter-spacing: 0.4px;
     margin: 0px;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .team-list-item-holder-paragraph {
@@ -347,21 +357,23 @@ ul {
     padding-top: 0;
 }
 
-.project-list-row {
+.project-list {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px;
 }
 
 .project-list-item {
     background: var(--white);
-    border-bottom: 1px solid var(--cornflower);
-    margin: 24px 0;
     width: 360px;
     flex-shrink: 0;
 }
 
 .project-list-item-holder {
     padding: 32px 16px;
+    border: 1px solid var(--cornflower);
+    border-top: unset;
 }
 
 .project-list-item-holder-heading {
@@ -369,8 +381,7 @@ ul {
     font-weight: 500;
     line-height: 1.2em;
     letter-spacing: 0.4px;
-    padding-bottom: 8px;
-    margin: 0;
+    margin-bottom: 8px;
 }
 
 .project-list-item-holder-paragraph {
@@ -378,5 +389,4 @@ ul {
     font-size: 16px;
     line-height: 1.5em;
     letter-spacing: 0.32px;
-    margin: 0;
 }
