@@ -7,6 +7,7 @@ h1, h2, h3, p, ul{
     /*------------ PALETTE ---------------*/
     --grey: rgba(46, 47, 66, 0.70);
     --navyblue: #2E2F42;
+    --green: #31D0AA;
     --ocean: #404BBF;
     --slate: #434455;
     --iris: #4D5AE5;
@@ -97,10 +98,10 @@ img{
 
 .footer-container-socmed-list-item-link:hover,
 .footer-container-socmed-list-item-link:focus{
-    background-color: var(--ocean);
+    background-color: var(--green);
 }
 
-.footer-container-socmed-list-item-link svg{
+.footer-container-socmed-list-item-link .footer-container-socmed-list-item-link-svg{
     width: 24px;
     height: 24px;
 }
@@ -225,25 +226,12 @@ img{
 
 /*----------------- STUDIO PAGE -----------------*/
 .board {
-    background: /*var(--grey)*/ url('/images/background/people-office.jpg') no-repeat 50% 60%;
-    background-size: 1440px;
+    background-image: linear-gradient(var(--grey), var(--grey)), url('/images/background/people-office.jpg');
+    background-size: 1440px, 1440px;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
     flex-shrink: 0;
 }
-
-.board-container{
-    background-color: var(--grey);
-}
-
-/*.board::after{
-    content: "";
-    position: absolute;
-    background-color: var(--grey);
-    width: 1440px;
-    height: 463px;
-    top: 74px;
-    left: 165px;
-    z-index: 1;
-}*/
 
 .board-heading {
     color: var(--white);
@@ -315,7 +303,7 @@ img{
     flex-shrink: 0;
 }
 
-.features-list-item-icon svg{
+.features-list-item-icon .features-list-item-icon-svg{
     width: 64px;
     height: 64px;
 }
@@ -416,7 +404,12 @@ img{
     background-color: var(--ocean);
 }
 
-.team-list-item-holder-socmed-item-link svg{
+.team-list-item-holder-socmed-item-link{
+    display: flex;
+    align-items: center;
+}
+
+.team-list-item-holder-socmed-item-link  .team-list-item-holder-socmed-item-link-svg{
     fill: var(--cloud);
     width: 16px;
     height: 16px;
