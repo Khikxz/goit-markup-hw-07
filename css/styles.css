@@ -146,6 +146,21 @@ img{
     gap: 40px;
 }
 
+.nav-list-item{
+    position: relative;
+}
+
+.nav-list-item:hover .nav-list-item-link::after{
+    content: '';
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    background-color: var(--ocean);
+    border-radius: 2px;
+}
+
 .nav-list-item-link {
     color: var(--navyblue);
     font-weight: 500;
@@ -226,8 +241,8 @@ img{
 
 /*----------------- STUDIO PAGE -----------------*/
 .board {
-    background-image: linear-gradient(var(--grey), var(--grey)), url('/images/background/people-office.jpg');
-    background-size: 1440px, 1440px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), 
+                      url('/images/background/people-office.jpg');
     background-repeat: no-repeat;
     background-position: 50% 60%;
     flex-shrink: 0;
@@ -430,6 +445,7 @@ img{
 }
 
 .customer-list-item{
+    color: var(--lightslate);
     border-radius: 4px;
     border: 1px solid var(--lightslate);
     width: 168px;
@@ -440,13 +456,14 @@ img{
     justify-content: center;
 }
 
-.customer-list-item svg:hover, 
-.customer-list-item svg:focus{
-    fill: var(--ocean);
+.customer-list-item:hover, 
+.customer-list-item:focus{
+    color: var(--ocean);
+    border-color: var(--ocean);
 }
 
-.customer-list-item svg{
-    fill: var(--lightslate);
+.customer-list-item .customer-list-item-svg{
+    fill: currentColor;
     width: 104px;
     height: 56px;
 }
@@ -463,10 +480,6 @@ img{
     justify-content: center;
     display: flex;
     gap: 24px;
-}
-
-.filter-list-item{
- /*   padding-right: 24px;*/
 }
 
 .filter-list-item-button {
