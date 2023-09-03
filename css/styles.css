@@ -47,6 +47,7 @@ img{
     flex-direction: column;
     align-items: center;
     gap: 48px;
+    padding: 188px 0;
 }
 
 .activity-container, 
@@ -245,6 +246,7 @@ img{
                       url('../images/background/people-office.jpg');
     background-repeat: no-repeat;
     background-position: 50% 60%;
+    background-size: cover;
     flex-shrink: 0;
 }
 
