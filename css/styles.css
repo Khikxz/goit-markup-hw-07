@@ -273,7 +273,7 @@ img{
     height: 584px;
     flex-shrink: 0;
     border-radius: 4px;
-    background: /*var(--dairy)*/ url("../images/background/modal.jpg");
+    background: var(--dairy) /*url("../images/background/modal.jpg")*/;
     background-size: cover;
     background-position: 50% 0%;
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
