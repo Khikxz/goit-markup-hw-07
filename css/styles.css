@@ -6,6 +6,7 @@ h1, h2, h3, p, ul{
 :root {
     /*------------ PALETTE ---------------*/
     --grey: rgba(46, 47, 66, 0.70);
+    --navyblue_modal: rgba(46, 47, 66, 0.40);
     --navyblue: #2E2F42;
     --green: #31D0AA;
     --ocean: #404BBF;
@@ -14,6 +15,7 @@ h1, h2, h3, p, ul{
     --lightslate: #8E8F99;
     --cornflower: #E7E9FC;
     --cloud: #F4F4FD;
+    --dairy: #FCFCFC;
     --white: #FFF;
 }
 
@@ -151,7 +153,8 @@ img{
     position: relative;
 }
 
-.nav-list-item:hover .nav-list-item-link::after{
+/*.nav-list-item:hover .nav-list-item-link::after{*/
+.nav-current::after {
     content: '';
     height: 4px;
     width: 100%;
@@ -230,6 +233,7 @@ img{
 
 /*----------------- THE BODY -----------------*/
 .body {
+    position: relative;
     /*------------ DEFAULTS ---------------*/
     color: var(--navyblue);
     font-family: 'Roboto', sans-serif;
@@ -242,14 +246,77 @@ img{
 }
 
 /*----------------- STUDIO PAGE -----------------*/
+.backdrop {
+    background-color: var(--navyblue_modal);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    transform: scale(1);
+    opacity: 1;
+    transition-duration: 2s;
+}
+
+.is-hidden{
+    visibility: hidden;
+    transform: scale(0.25);
+    opacity: 0;
+    transition-duration: 2s;
+}
+
+.modal{
+    position: fixed;
+    width: 408px;
+    height: 584px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: /*var(--dairy)*/ url("../images/background/modal.jpg");
+    background-size: cover;
+    background-position: 50% 0%;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+    z-index: 3;
+}
+
+.modal-icon{
+    display: flex;
+    position: relative;
+}
+
+.modal-icon:hover{
+    cursor: pointer;
+}
+
+.modal-icon-circle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    right: 24px;
+}
+
+.modal-icon-cross {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    top: 32px;
+    right: 32px;
+}
+
 .board {
-    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), 
+    background-image: linear-gradient(var(--grey), var(--grey)), 
                       url('../images/background/people-office.jpg');
     background-repeat: no-repeat;
     background-position: 50% 60%;
     background-size: cover;
     padding: 188px 0;
     flex-shrink: 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .board-heading {
@@ -545,6 +612,39 @@ img{
     border-radius: 0px 0px 4px 4px;
     background: var(--white);
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.project-list-item-box{
+    width: 360px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-list-item:hover .project-list-item-overlay{
+    transform: translateY(0);
+}
+
+.project-list-item-overlay{
+    background-color: var(--iris);
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform 250ms ease-in-out;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-list-item-overlay-caption{
+    color: var(--cloud);
+    width: 296px;   
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: 0.32px;
 }
 
 .project-list-item-holder {
