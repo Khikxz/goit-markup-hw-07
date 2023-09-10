@@ -102,6 +102,7 @@ img{
 .footer-container-socmed-list-item-link:hover,
 .footer-container-socmed-list-item-link:focus{
     background-color: var(--green);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-container-socmed-list-item-link .footer-container-socmed-list-item-link-svg{
@@ -153,8 +154,7 @@ img{
     position: relative;
 }
 
-/*.nav-list-item:hover .nav-list-item-link::after{*/
-.nav-current::after {
+.nav-list-item-link::after{
     content: '';
     height: 4px;
     width: 100%;
@@ -163,6 +163,17 @@ img{
     bottom: -25px;
     background-color: var(--ocean);
     border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0.25);
+}
+
+.nav-list-item:hover .nav-list-item-link::after{
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition-property: transform, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .nav-list-item-link {
@@ -175,8 +186,28 @@ img{
 }
 
 .nav-list-item-link:hover,
-.nav-list-item-link:focus {
+.nav-list-item-link:focus,
+.nav-current {
     color: var(--iris);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-current::after {
+    content: '';
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    background-color: var(--ocean);
+    border-radius: 2px;
+    transform: scaleX(1);
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 250ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .address {
@@ -192,6 +223,9 @@ img{
 .address-link:hover,
 .address-link:focus {
     color: var(--iris);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 /*----------------- FOOTER -----------------*/
@@ -255,16 +289,7 @@ img{
     justify-content: center;
     position: fixed;
     z-index: 2;
-    transform: scale(1);
     opacity: 1;
-    transition-duration: 2s;
-}
-
-.is-hidden{
-    visibility: hidden;
-    transform: scale(0.25);
-    opacity: 0;
-    transition-duration: 2s;
 }
 
 .modal{
@@ -276,7 +301,22 @@ img{
     background: var(--dairy);
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
     z-index: 3;
+    transform: scale(1);
+    opacity: 1;
+    transition-property: transform, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
 }
+
+.backdrop.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.backdrop.is-hidden .modal{
+    transform: scale(0.25);
+    opacity: 0;
+ }
 
 .modal-icon{
     display: flex;
@@ -349,7 +389,11 @@ img{
 
 .board-button:hover {
     cursor: pointer;
-    background: var(--ocean)
+    background: var(--ocean);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+
 }
 
 .board-button:focus {
@@ -486,6 +530,9 @@ img{
 .team-list-item-holder-socmed-item:hover,
 .team-list-item-holder-socmed-item:focus{
     background-color: var(--ocean);
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .team-list-item-holder-socmed-item-link{
@@ -529,6 +576,9 @@ img{
 .customer-list-item:focus{
     color: var(--ocean);
     border-color: var(--ocean);
+    transition-property: color, border-color;
+    transition-duration: 250ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-list-item .customer-list-item-svg{
@@ -581,6 +631,10 @@ img{
     font-size: 16px;
     line-height: 1.5em;
     letter-spacing: 0.64px;
+
+    transition-property: color, border-color, background-color, box-shadow;
+    transition-duration: 250ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-list-item-button:focus {
@@ -622,6 +676,10 @@ img{
 
 .project-list-item:hover .project-list-item-overlay{
     transform: translateY(0);
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+
 }
 
 .project-list-item-overlay{
@@ -633,8 +691,9 @@ img{
     top: 0;
     left: 0;
     transform: translateY(100%);
-    transition: transform 250ms ease-in-out;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .project-list-item-overlay-caption{
