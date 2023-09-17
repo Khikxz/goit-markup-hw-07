@@ -66,7 +66,7 @@ img{
 
 .footer-container{
     padding: 0;
-    gap: 120px;
+    gap: 100px;
 }
 
 .footer-container-text{
@@ -112,6 +112,64 @@ img{
     height: 24px;
 }
 
+.footer-subscribe-label{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: 0.32px;
+}
+
+.footer-subscribe-label-holder{
+    display: inline-flex;
+    gap:  24px;
+}
+
+.footer-subscribe-label-holder-input{    
+    width: 264px;
+    height: 40px;
+    flex-shrink: 0;
+    color: var(--cloud);
+    background-color: var(--navyblue);
+    padding-left: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.footer-subscribe-label-holder-button{
+    display: inline-flex;
+    padding: 8px 24px;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 4px;
+    background-color: var(--iris);
+
+    color: var(--white);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: 0.64px;
+
+    transition-property: background;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscribe-label-holder-button:hover{
+    background-color: var(--ocean);
+    cursor: pointer;
+}
+
+.footer-subscribe-label-holder-button-svg{
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+}
 
 /*----------------- LOGO -----------------*/
 .logo {
@@ -344,6 +402,218 @@ img{
     width: 8px;
     top: 32px;
     right: 32px;
+}
+
+.modal-content{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+}
+
+.modal-heading{
+    color: var(--navyblue);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: 0.32px;
+}
+
+.modal-form{
+    width: 408px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-form-input_group{
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 4px;
+}
+
+.modal-form-input_group-label{
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    color: var(--lightslate);
+    
+    /* Small Text */
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.167em;
+    letter-spacing: 0.48px;
+}
+
+.modal-form-input_group-container{
+    color: var(--navyblue);
+    transition-property: color, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input_group-label-name-input{
+    color: var(--navyblue);
+    width: 360px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    padding: 15px 38px 16px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid var(--navyblue_modal);
+}
+
+.modal-form-input_group-label-name-icon{
+    display: flex;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 64px;
+    left: 40px;
+    fill: currentColor;
+    z-index: 5;
+}
+
+.modal-form-input_group-label-phone-input{
+    width: 360px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    padding: 15px 38px 16px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid var(--navyblue_modal);
+}
+
+.modal-form-input_group-label-phone-icon{
+    display: flex;
+    position: absolute;
+    width: 18px;
+    height: 24px;
+    top: 125px;
+    left: 40px;
+    fill: currentColor;
+    z-index: 5;
+}
+
+.modal-form-input_group-label-email-input {
+    width: 360px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    padding: 15px 38px 16px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid var(--navyblue_modal);
+}
+
+.modal-form-input_group-label-email-icon {
+    display: flex;
+    position: absolute;
+    width: 18px;
+    height: 24px;
+    top: 186px;
+    left: 40px;
+    fill: currentColor;
+    z-index: 5;
+}
+
+.modal-form-input_group-label-comment-input{
+    width: 360px;
+    height: 120px;
+    padding: 8px 16px;
+    flex-shrink: 0;
+    resize: none;
+    border-radius: 4px;
+    border: 1px solid var(--navyblue_modal);
+}
+
+.modal-form-input_group-container:hover{
+    color: var(--iris);
+}
+
+.modal-form-input_group-container:hover .modal-form-input_group-container-input {
+    border-color: var(--iris);
+}
+
+.modal-form-privacy-label{ 
+    display: flex;
+    align-items: flex-start;
+    width: 360px;
+    flex-shrink: 0;
+    gap: 8px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    color: var(--lightslate);
+    font-size: 12px;
+    line-height: 1.167em;
+    letter-spacing: 0.48px;
+}
+
+.modal-form-privacy-label-checkbox{
+    z-index: 6;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-privacy-label-checkbox:active,
+.modal-form-privacy-label-checkbox:focus {
+    opacity: 0;
+}
+
+.modal-form-privacy-label-icon{
+    display: flex;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    z-index: 5;
+    fill: var(--ocean);
+    stroke-width: 1px;
+    stroke: var(--ocean);
+}
+
+.modal-form-privacy-label-text{
+    width: 338px;
+}
+
+.privacy-link{
+    color: var(--iris);        
+    text-decoration-line: underline;
+}
+
+.modal-form-button{
+    width: 105px;
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 16px 32px;
+    gap: 10px;
+    text-align: center;
+
+    /* Button Text */
+    color: var(--white);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: 0.64px;
+    border-radius: 4px;
+    background: var(--iris);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.modal-form-button:hover{
+    cursor: pointer;
 }
 
 .board {
