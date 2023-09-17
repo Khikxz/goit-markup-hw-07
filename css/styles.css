@@ -537,11 +537,13 @@ img{
     border: 1px solid var(--navyblue_modal);
 }
 
-.modal-form-input_group-container:hover{
+.modal-form-input_group-container:active,
+.modal-form-input_group-container:focus{
     color: var(--iris);
 }
 
-.modal-form-input_group-container:hover .modal-form-input_group-container-input {
+.modal-form-input_group-container:active .modal-form-input_group-container-input, 
+.modal-form-input_group-container:focus .modal-form-input_group-container-input{
     border-color: var(--iris);
 }
 
