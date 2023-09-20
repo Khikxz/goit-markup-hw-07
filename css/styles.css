@@ -17,6 +17,10 @@ h1, h2, h3, p, ul{
     --cloud: #F4F4FD;
     --dairy: #FCFCFC;
     --white: #FFF;
+
+    /*------------- TIMING --------------*/
+    --timing: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /*--------------------------------------------*/
@@ -99,7 +103,7 @@ img{
     justify-content: center;
     transition-property:background-color;
     transition-duration: 250ms; 
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: var(--timing);
 }
 
 .footer-container-socmed-list-item-link:hover,
@@ -157,7 +161,7 @@ img{
 
     transition-property: background;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: var(--timing);
 }
 
 .footer-subscribe-label-holder-button:hover{
@@ -228,7 +232,7 @@ img{
     transform-origin: left;
     transition-property: transform, opacity;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    transition-timing-function: var(--timing);
 }
 
 .nav-list-item:hover .nav-list-item-link::after{
@@ -246,7 +250,7 @@ img{
     letter-spacing: 0.32px;
     transition-property: color;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: var(--timing);
 }
 
 .nav-list-item-link:hover,
@@ -268,7 +272,7 @@ img{
     opacity: 1;
     transition-property: opacity;
     transition-duration: 250ms; 
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-timing-function: var(--timing); 
 }
 
 .address {
@@ -281,7 +285,7 @@ img{
     font-style: normal;
     transition-property: color;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-timing-function: var(--timing); 
 }
 
 .address-link:hover,
@@ -366,7 +370,7 @@ img{
     opacity: 1;
     transition-property: transform, opacity;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-timing-function: var(--timing);
 }
 
 .backdrop.is-hidden{
@@ -379,29 +383,36 @@ img{
     opacity: 0;
  }
 
-.modal-icon{
+.modal-close-button{
     display: flex;
-    position: relative;
-}
-
-.modal-icon:hover{
-    cursor: pointer;
-}
-
-.modal-icon-circle {
     position: absolute;
+    align-items: center;
+    justify-content: center;
+    background: var(--cornflower);
+    color: var(--navyblue);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 12px;
     width: 24px;
     height: 24px;
-    top: 24px;
-    right: 24px;
+    top: 20px;
+    right: 20px;
+    transition-property: background, color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing);
+}
+
+.modal-close-button:hover{
+    cursor: pointer;
+    background: var(--ocean);
+    border-color: var(--ocean);
+    color: var(--cloud);
 }
 
 .modal-icon-cross {
-    position: absolute;
+    position: relative;
     height: 8px;
     width: 8px;
-    top: 32px;
-    right: 32px;
+    fill: currentColor;
 }
 
 .modal-content{
@@ -440,7 +451,13 @@ img{
     border-radius: 4px;
 }
 
-.modal-form-input_group-label{
+.modal-form-label{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-label-text{
     width: 360px;
     display: flex;
     flex-direction: column;
@@ -453,14 +470,7 @@ img{
     letter-spacing: 0.48px;
 }
 
-.modal-form-input_group-container{
-    color: var(--navyblue);
-    transition-property: color, border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-form-input_group-label-name-input{
+.form-label-input{
     color: var(--navyblue);
     width: 360px;
     height: 40px;
@@ -470,86 +480,55 @@ img{
     flex-shrink: 0;
     border-radius: 4px;
     border: 1px solid var(--navyblue_modal);
+    outline: none;
 }
 
-.modal-form-input_group-label-name-icon{
+.modal-form-label::after {
     display: flex;
     position: absolute;
-    width: 18px;
+    content: url('../images/icons.svg#name');
     height: 18px;
-    top: 64px;
-    left: 40px;
-    fill: currentColor;
-    z-index: 5;
-}
-
-.modal-form-input_group-label-phone-input{
-    width: 360px;
-    height: 40px;
-    display: flex;
-    position: relative;
-    padding: 15px 38px 16px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    border: 1px solid var(--navyblue_modal);
-}
-
-.modal-form-input_group-label-phone-icon{
-    display: flex;
-    position: absolute;
     width: 18px;
-    height: 24px;
-    top: 125px;
-    left: 40px;
-    fill: currentColor;
-    z-index: 5;
+    top: 25px;
+    left: 16px;
+    z-index: 6;
 }
 
-.modal-form-input_group-label-email-input {
-    width: 360px;
-    height: 40px;
-    display: flex;
-    position: relative;
-    padding: 15px 38px 16px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    border: 1px solid var(--navyblue_modal);
-}
-
-.modal-form-input_group-label-email-icon {
-    display: flex;
-    position: absolute;
-    width: 18px;
-    height: 24px;
-    top: 186px;
-    left: 40px;
-    fill: currentColor;
-    z-index: 5;
-}
-
-.modal-form-input_group-label-comment-input{
-    width: 360px;
+.form-textarea{
     height: 120px;
     padding: 8px 16px;
     flex-shrink: 0;
     resize: none;
-    border-radius: 4px;
-    border: 1px solid var(--navyblue_modal);
 }
 
-.modal-form-input_group-container:active,
-.modal-form-input_group-container:focus{
+.form-input-icon{
+    display: flex;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 24px;
+    left: 16px;
+    fill: currentColor;
+    z-index: 5;
+}
+
+.input-icon{
+    height: 24px;
+    top: 22px;
+}
+
+.modal-form-label:hover{
     color: var(--iris);
 }
 
-.modal-form-input_group-container:active .modal-form-input_group-container-input, 
-.modal-form-input_group-container:focus .modal-form-input_group-container-input{
+.form-label-input:focus{
     border-color: var(--iris);
 }
 
 .modal-form-privacy-label{ 
     display: flex;
     align-items: flex-start;
+    position: relative;
     width: 360px;
     flex-shrink: 0;
     gap: 8px;
@@ -562,15 +541,15 @@ img{
 }
 
 .modal-form-privacy-label-checkbox{
+    cursor: pointer;
     z-index: 6;
     opacity: 1;
     transition-property: opacity;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: var(--timing); 
 }
 
-.modal-form-privacy-label-checkbox:active,
-.modal-form-privacy-label-checkbox:focus {
+.modal-form-privacy-label-checkbox:checked {
     opacity: 0;
 }
 
@@ -597,7 +576,8 @@ img{
 .modal-form-button{
     width: 105px;
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 16px 32px;
     gap: 10px;
     text-align: center;
@@ -612,9 +592,16 @@ img{
     border-radius: 4px;
     background: var(--iris);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    border: unset;
+    min-width: 169px;
+
+    transition-property: background;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing);
 }
 
 .modal-form-button:hover{
+    background-color: var(--ocean);
     cursor: pointer;
 }
 
@@ -664,7 +651,7 @@ img{
     /*TRANSITION*/
     transition-property: background-color;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-timing-function: var(--timing);
 
 }
 
@@ -804,7 +791,7 @@ img{
     justify-content: center;
     transition-property: background-color;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-timing-function: var(--timing);
 }
 
 .team-list-item-holder-socmed-item:hover,
@@ -849,7 +836,7 @@ img{
     justify-content: center;
     transition-property: color, border-color;
     transition-duration: 250ms; 
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: var(--timing);
 }
 
 .customer-list-item:hover, 
@@ -896,7 +883,7 @@ img{
     /*TRANSITION*/
     transition-property: color, border-color, background-color, box-shadow;
     transition-duration: 250ms; 
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: var(--timing);
 }
 
 .filter-list-item-button:hover {
@@ -962,7 +949,7 @@ img{
     transform: translateY(100%);
     transition-property: transform;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-timing-function: var(--timing);
 }
 
 .project-list-item-overlay-caption{
@@ -993,3 +980,4 @@ img{
     line-height: 1.5em;
     letter-spacing: 0.32px;
 }
+

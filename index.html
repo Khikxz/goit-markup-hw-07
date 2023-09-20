@@ -15,49 +15,42 @@
 <body class="body">
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <div class="modal-icon" data-modal-close>
+            <button class="modal-close-button" type="button" data-modal-close>
                 <svg class="modal-icon-cross">
                     <use href="./images/icons.svg#cross"></use>
                 </svg>
-            </div>
+            </button>
             <div class="modal-content">
                 <h3 class="modal-heading">Leave your contacts and we will call you back</h3>
                 <form class="modal-form">
                     <div class="modal-form-input_group" role="group">
-                        <label class="modal-form-input_group-label">
-                            Name
-                            <div class="modal-form-input_group-container">
-                                <svg class="modal-form-input_group-container-icon modal-form-input_group-label-name-icon">
-                                    <use href="./images/icons.svg#name"></use>
-                                </svg>
-                                <input type="name" class="modal-form-input_group-container-input modal-form-input_group-label-name-input" name="name" autofocus />
-                            </div>
+                        <label class="modal-form-label">
+                            <span class="form-label-text">Name</span>
+                            <input class="form-label-input" type="name" name="full-name" autofocus />
+                            <svg class="form-input-icon">
+                                <use href="./images/icons.svg#name"></use>
+                            </svg>
                         </label>
                         
-                        <label class="modal-form-input_group-label">
-                            Phone
-                            <div class="modal-form-input_group-container">
-                                <svg class="modal-form-input_group-container-icon modal-form-input_group-label-phone-icon">
-                                    <use href="./images/icons.svg#phone"></use>
-                                </svg>
-                                <input type="tel" class="modal-form-input_group-container-input modal-form-input_group-label-phone-input" name="phone" />
-                            </div>
+                        <label class="modal-form-label">
+                            <span class="form-label-text">Phone</span>
+                            <input class="form-label-input" type="tel" name="phone" />
+                            <svg class="form-input-icon input-icon">
+                                <use href="./images/icons.svg#phone"></use>
+                            </svg>
                         </label>
                         
-                        <label class="modal-form-input_group-label">
-                            Email
-                            <div class="modal-form-input_group-container">
-                                <svg class="modal-form-input_group-container-icon modal-form-input_group-label-email-icon">
+                        <label class="modal-form-label">
+                            <span class="form-label-text">Email</span>
+                            <input class="form-label-input" type="email" name="email" />
+                                <svg class="form-input-icon input-icon">
                                     <use href="./images/icons.svg#email"></use>
                                 </svg>
-                                <input type="email" class="modal-form-input_group-container-input modal-form-input_group-label-email-input"
-                                name="email" />
-                            </div>
                         </label>
                         
                         <label class="modal-form-input_group-label">
-                            Comment
-                            <textarea class="modal-form-input_group-label-comment-input" name="comment" placeholder="Text input"></textarea>
+                            <span class="form-label-text">Comment</span>
+                            <textarea class="form-label-input form-textarea" name="comment" placeholder="Text input"></textarea>
                         </label>
                     </div>
                     <label class="modal-form-privacy-label">
@@ -69,7 +62,7 @@
                             I accept the terms and conditions of the <a href="" class="privacy-link">Privacy Policy</a>
                         </div>
                     </label>
-                    <button type="submit" class="modal-form-button">Send<button>
+                    <button type="submit" class="modal-form-button">Send</button>
                 </form>
             </div>
         </div>
