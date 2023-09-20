@@ -517,7 +517,7 @@ img{
     top: 22px;
 }
 
-.modal-form-label:hover{
+.form-label-input:focus + .form-input-icon{
     color: var(--iris);
 }
 
