@@ -32,6 +32,10 @@ ul{
     list-style: none;
 }
 
+button, input, textarea{
+    font-family: inherit;
+}
+
 img{
     display: block;
     max-width: 100%;
@@ -133,6 +137,9 @@ img{
 }
 
 .footer-subscribe-label-holder-input{    
+    font-size: 12px;
+    line-height: 1.167em;
+    letter-spacing: 0.48px;
     width: 264px;
     height: 40px;
     flex-shrink: 0;
@@ -142,6 +149,11 @@ img{
     border-radius: 4px;
     border: 1px solid var(--white);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.footer-subscribe-label-holder-input::placeholder{
+    color: var(--white);
 }
 
 .footer-subscribe-label-holder-button{
@@ -151,6 +163,7 @@ img{
     gap: 16px;
     border-radius: 4px;
     background-color: var(--iris);
+    border: 1px solid var(--iris);
 
     color: var(--white);
     font-family: inherit;
@@ -159,13 +172,14 @@ img{
     line-height: 1.5em;
     letter-spacing: 0.64px;
 
-    transition-property: background;
+    transition-property: background, border;
     transition-duration: 250ms;
     transition-timing-function: var(--timing);
 }
 
 .footer-subscribe-label-holder-button:hover{
     background-color: var(--ocean);
+    border-color: var(--ocean);
     cursor: pointer;
 }
 
@@ -360,7 +374,7 @@ img{
 .modal{
     position: fixed;
     width: 408px;
-    height: 584px;
+    padding: 72px 0 24px;
     flex-shrink: 0;
     border-radius: 4px;
     background: var(--dairy);
@@ -419,7 +433,6 @@ img{
     display: flex;
     gap: 16px;
     flex-direction: column;
-    position: absolute;
     top: 72px;
 }
 
@@ -459,6 +472,7 @@ img{
 
 .form-label-text{
     width: 360px;
+    margin-bottom: 4px;
     display: flex;
     flex-direction: column;
     color: var(--lightslate);
@@ -472,6 +486,9 @@ img{
 
 .form-label-input{
     color: var(--navyblue);
+    font-size: 12px;
+    line-height: 1.167em;
+    letter-spacing: 0.48px;
     width: 360px;
     height: 40px;
     display: flex;
@@ -506,7 +523,7 @@ img{
     position: absolute;
     width: 18px;
     height: 18px;
-    top: 24px;
+    top: 50%;
     left: 16px;
     fill: currentColor;
     z-index: 5;
@@ -514,14 +531,16 @@ img{
 
 .input-icon{
     height: 24px;
-    top: 22px;
+    top: 45%;
 }
 
-.form-label-input:focus + .form-input-icon{
+.form-label-input:focus + .form-input-icon,
+.form-label-input:hover + .form-input-icon{
     color: var(--iris);
 }
 
-.form-label-input:focus{
+.form-label-input:focus,
+.form-label-input:hover{
     border-color: var(--iris);
 }
 
@@ -899,6 +918,7 @@ img{
 
 .filter-list-item-button:focus {
     background: var(--ocean);
+    color: var(--white);
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
