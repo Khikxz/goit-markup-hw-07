@@ -59,13 +59,13 @@
                     </div>
                     <label class="modal-form-privacy-label">
                         <input type="checkbox" class="modal-form-privacy-label-checkbox visually-hidden" name="policy"
-                            value="policy" />
+                            value="policy" required/>
                         <svg class="modal-form-privacy-label-icon">
                             <use href="./images/icons.svg#check"></use>
                         </svg>
-                        <div class="modal-form-privacy-label-text">
+                        <p class="modal-form-privacy-label-text">
                             I accept the terms and conditions of the <a href="" class="privacy-link">Privacy Policy</a>
-                        </div>
+                        </p>
                     </label>
                     <button type="submit" class="modal-form-button">Send</button>
                 </form>
@@ -189,8 +189,13 @@
                 <h2 class="team-heading">Our Team</h2>
                 <ul class="team-list">
                     <li class="team-list-item">
-                        <img src="images/team/mark_guerrero.jpg" alt="adult male" width="264"
-                            class="team-list-item-image">
+                        <img 
+                            srcset="images/team/mark_guerrero.jpg 1x, images/team/mark_guerrero@2x.jpg 2x"
+                            src="images/team/mark_guerrero.jpg" 
+                            alt="adult male" 
+                            width="264"
+                            class="team-list-item-image"
+                            >
                         <div class="team-list-item-holder">
                             <h3 class="team-list-item-holder-heading">Mark Guerrero</h3>
                             <p class="team-list-item-holder-paragraph">Product Designer</p>
@@ -227,7 +232,13 @@
                         </div>
                     </li>
                     <li class="team-list-item">
-                        <img src="images/team/tom_ford.jpg" alt="adult male" width="264" class="team-list-item-image">
+                        <img 
+                            srcset="images/team/tom_ford.jpg 1x, images/team/tom_ford@2x.jpg 2x"
+                            src="images/team/tom_ford.jpg" 
+                            alt="adult male" 
+                            width="264" 
+                            class="team-list-item-image"
+                        >
                         <div class="team-list-item-holder">
                             <h3 class="team-list-item-holder-heading">Tom Ford</h3>
                             <p class="team-list-item-holder-paragraph">Frontend Developer</p>
@@ -264,8 +275,13 @@
                         </div>
                     </li>
                     <li class="team-list-item">
-                        <img src="images/team/camila_garcia.jpg" alt="adult female" width="264"
-                            class="team-list-item-image">
+                        <img 
+                            srcset="images/team/camila_garcia.jpg 1x, images/team/camila_garcia@2x.jpg 2x"
+                            src="images/team/camila_garcia.jpg" 
+                            alt="adult female" 
+                            width="264"
+                            class="team-list-item-image"
+                        >
                         <div class="team-list-item-holder">
                             <h3 class="team-list-item-holder-heading">Camila Garcia</h3>
                             <p class="team-list-item-holder-paragraph">Marketing</p>
@@ -302,8 +318,13 @@
                         </div>
                     </li>
                     <li class="team-list-item">
-                        <img src="images/team/daniel_wilson.jpg" alt="adult male" width="264"
-                            class="team-list-item-image">
+                        <img 
+                            srcset="images/team/daniel_wilson.jpg 1x, images/team/daniel_wilson@2x.jpg 2x"
+                            src="images/team/daniel_wilson.jpg" 
+                            alt="adult male" 
+                            width="264"
+                            class="team-list-item-image"
+                        >
                         <div class="team-list-item-holder">
                             <h3 class="team-list-item-holder-heading">Daniel Wilson</h3>
                             <p class="team-list-item-holder-paragraph">UI Designer</p>
@@ -404,47 +425,49 @@
                    </li>
                 </ul>
             </nav>
-           <address class="container mobile-address">
-                <ul class="mobile-address-list">
-                    <li class="mobile-address-list-item">
-                        <a href="mailto:info@devstudio.com" class="mobile-address-link mobile-mail">info@devstudio.com</a>
-                    </li>
-                    <li class="mobile-address-list-item">
-                        <a href="tel:+11(000)111-11-11" class="mobile-address-link mobile-tel">+11 (000) 111-11-11</a>
-                    </li>
-                </ul>
-            </address>
-            <div class="container mobile-socmed-container">
-                <ul class="mobile-socmed-list">
-                    <li class="mobile-socmed-list-item">
-                        <a class="mobile-socmed-list-item-link" href="">
-                            <svg class="mobile-socmed-list-item-link-svg">
-                                <use href="./images/icons.svg#instagram"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-socmed-list-item">
-                        <a class="mobile-socmed-list-item-link" href="">
-                            <svg class="mobile-socmed-list-item-link-svg">
-                                <use href="./images/icons.svg#twitter"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-socmed-list-item">
-                        <a class="mobile-socmed-list-item-link" href="">
-                            <svg class="mobile-socmed-list-item-link-svg">
-                                <use href="./images/icons.svg#facebook"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-socmed-list-item">
-                        <a class="mobile-socmed-list-item-link" href="">
-                            <svg class="mobile-socmed-list-item-link-svg">
-                                <use href="./images/icons.svg#linkedin"></use>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+            <div class="mobile-company">
+                <address class="container mobile-address">
+                    <ul class="mobile-address-list">
+                        <li class="mobile-address-list-item">
+                            <a href="mailto:info@devstudio.com" class="mobile-address-link mobile-mail">info@devstudio.com</a>
+                        </li>
+                        <li class="mobile-address-list-item">
+                            <a href="tel:+11(000)111-11-11" class="mobile-address-link mobile-tel">+11 (000) 111-11-11</a>
+                        </li>
+                    </ul>
+                </address>
+                <div class="container mobile-socmed-container">
+                    <ul class="mobile-socmed-list">
+                        <li class="mobile-socmed-list-item">
+                            <a class="mobile-socmed-list-item-link" href="">
+                                <svg class="mobile-socmed-list-item-link-svg">
+                                    <use href="./images/icons.svg#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-socmed-list-item">
+                            <a class="mobile-socmed-list-item-link" href="">
+                                <svg class="mobile-socmed-list-item-link-svg">
+                                    <use href="./images/icons.svg#twitter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-socmed-list-item">
+                            <a class="mobile-socmed-list-item-link" href="">
+                                <svg class="mobile-socmed-list-item-link-svg">
+                                    <use href="./images/icons.svg#facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-socmed-list-item">
+                            <a class="mobile-socmed-list-item-link" href="">
+                                <svg class="mobile-socmed-list-item-link-svg">
+                                    <use href="./images/icons.svg#linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -496,7 +519,7 @@
                     Subscribe
                     <div class="footer-subscribe-label-holder">
                         <input type="email" class="footer-subscribe-label-holder-input" name="email"
-                            placeholder="E-mail" />
+                            placeholder="E-mail" required/>
                         <button type="submit" class="footer-subscribe-label-holder-button">
                             Subscribe
                             <svg class="footer-subscribe-label-holder-button-svg">

@@ -45,6 +45,7 @@ img {
 /*----------------- CONTAINER -----------------*/
 .container {
     width: min(100%, 396px);
+    padding: 0 15px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -61,8 +62,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
-    padding: 0;
+    gap: 72px;
 }
 
 .activity-container,
@@ -399,7 +399,7 @@ img {
 
 /*----------------- SECTION -----------------*/
 .section {
-    padding: 120px 0px;
+    padding: 96px 0px;
     width: auto;
     align-items: center;
 }
@@ -420,7 +420,7 @@ img {
 
 .modal {
     position: fixed;
-    width: 408px;
+    width: min(100%, 408px);
     padding: 72px 0 24px;
     flex-shrink: 0;
     border-radius: 4px;
@@ -493,8 +493,8 @@ img {
 }
 
 .modal-form {
-    width: 408px;
-    padding: 0 24px;
+    width: min(100%, 408px);
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -502,10 +502,9 @@ img {
 }
 
 .modal-form-input_group {
-    width: 360px;
+    width: min(100%, 360px);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
     gap: 8px;
     border-radius: 4px;
@@ -518,7 +517,6 @@ img {
 }
 
 .form-label-text {
-    width: 360px;
     margin-bottom: 4px;
     display: flex;
     flex-direction: column;
@@ -536,7 +534,7 @@ img {
     font-size: 12px;
     line-height: 1.167em;
     letter-spacing: 0.48px;
-    width: 360px;
+    width: min(100%, 360px);
     height: 40px;
     display: flex;
     position: relative;
@@ -595,7 +593,7 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    width: 360px;
+    width: min(100%, 360px);
     flex-shrink: 0;
     gap: 8px;
     margin-top: 16px;
@@ -708,7 +706,11 @@ img {
 
 .mobile-menu-container{
     position: relative;
-    padding: 80px 0 40px;
+    height: 100%;
+    padding: 80px 4% 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .mobile-menu.is-open{
@@ -742,6 +744,8 @@ img {
 
 .mobile-nav{
     justify-content: flex-start;
+    width: 100%;
+
 }
 
 .mobile-nav-list{
@@ -766,7 +770,6 @@ img {
 
 .mobile-address{
     justify-content: flex-start;
-    margin: 284px auto 48px;
 }
 
 .mobile-address-list{
@@ -789,16 +792,21 @@ img {
 }
 
 .mobile-mail{
-color: var(--slate);
+    color: var(--slate);
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2em;
     letter-spacing: 0.4px;
 }
 
+.mobile-socmed-container{
+    margin-top: 48px;
+}
+
 .mobile-socmed-list{
     display: flex;
-    gap: 56px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .mobile-socmed-list-item {
@@ -837,12 +845,13 @@ color: var(--slate);
     background-repeat: no-repeat;
     background-position: 50% 60%;
     background-size: cover;
-    padding: 188px 0;
+    padding: 112px 0;
     flex-shrink: 0;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .board-heading {
@@ -852,7 +861,6 @@ color: var(--slate);
     letter-spacing: 0.72px;
     text-transform: capitalize;
     color: var(--white);
-    width: 320px;
 }
 
 .board-button {
@@ -1165,8 +1173,7 @@ color: var(--slate);
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    row-gap: 48px;
-    column-gap: 24px;
+    gap: 48px;
 }
 
 .project-list-item {
@@ -1182,8 +1189,8 @@ color: var(--slate);
 }
 
 .project-list-item-box {
-    width: 360px;
-    height: 300px;
+    width: min(100%, 360px);
+    height: auto;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -1209,7 +1216,7 @@ color: var(--slate);
 
 .project-list-item-overlay-caption {
     color: var(--cloud);
-    width: 296px;
+    width: min(100%, 296px);
     font-size: 16px;
     line-height: 1.5em;
     letter-spacing: 0.32px;
@@ -1295,6 +1302,14 @@ color: var(--slate);
         column-gap: 24px;
     }
 
+    .board-container{
+        gap: 36px;
+    }
+
+    .board-heading{
+        width: 375px;
+    }
+
     .customer-list{
         width: 552px;
         row-gap: 72px;
@@ -1321,8 +1336,14 @@ color: var(--slate);
         flex-direction: row;
     }
 
+    .project-container{
+        padding: 0;
+    }
+
     .project-list{
         justify-content: flex-start;
+        row-gap: 72px;
+        column-gap: 24px;
     }
 
     .project-list-item {
@@ -1333,6 +1354,10 @@ color: var(--slate);
 /*------------------- DESKTOP ----------------------- */
 
 @media (min-width: 1158px){
+    .section{
+        padding: 120px 0px;
+    }
+    
     .container{
         width: 1128px;
     }
@@ -1352,6 +1377,30 @@ color: var(--slate);
 
     .header-menu{
         display: none;
+    }
+
+    .modal-form{
+        padding: 0 24px;
+    }
+
+    .board{
+        background-image: linear-gradient(var(--grey), var(--grey)),
+            url('../images/background/tablet-hero.jpg');
+        padding: 188px 0;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .board{
+            background-image: linear-gradient(var(--grey), var(--grey)),
+                url('../images/background/tablet-hero@2x.jpg');
+        }
+    }
+
+    .board-container{
+        gap: 48px;
     }
 
     .board-heading{
@@ -1389,6 +1438,7 @@ color: var(--slate);
 
     .features-list-item-paragraph{
         font-size: 16px;
+        font-weight: 400;
         letter-spacing: 0.32px;
         line-height: 1.2em;
         width: 264px;
@@ -1410,6 +1460,20 @@ color: var(--slate);
 
     .mobile-menu{
         display: none;
+    }
+
+    .project{
+        padding-top: 0;
+    }
+
+    .project-container{
+        padding: 0;
+    }
+
+    .project-list{
+        justify-content: flex-start;
+        row-gap: 48px;
+        column-gap: 24px;
     }
 
     .footer-container{
