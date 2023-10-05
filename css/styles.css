@@ -55,7 +55,6 @@ img {
 
 .header .header-container {
     justify-content: space-between;
-    width: calc(100% - 32px);
 }
 
 .board-container {
@@ -1286,7 +1285,7 @@ img {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        row-gap: 64px;
+        row-gap: 72px;
         column-gap: 24px;
     }
 
@@ -1298,7 +1297,7 @@ img {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        row-gap: 72px;
+        row-gap: 64px;
         column-gap: 24px;
     }
 
@@ -1307,7 +1306,9 @@ img {
     }
 
     .board-heading{
-        width: 375px;
+        width: 496px;
+        font-size: 56px;
+        line-height: 60px;
     }
 
     .customer-list{
@@ -1423,10 +1424,6 @@ img {
         line-height: 1.2em;
     }
 
-    .features-container{
-        padding-top: 72px;
-    }
-
     .features .features-list{
         flex-direction: row;
         gap: 24px;
@@ -1456,6 +1453,7 @@ img {
 
     .customer-list{
         flex-wrap: nowrap;
+        column-gap: 24px;
     }
 
     .mobile-menu{
