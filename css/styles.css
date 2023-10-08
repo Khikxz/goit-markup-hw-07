@@ -1301,6 +1301,21 @@ img {
         column-gap: 24px;
     }
 
+    .board{
+        background-image: linear-gradient(var(--grey), var(--grey)),
+            url('../images/background/tablet-hero.jpg');
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .board{
+            background-image: linear-gradient(var(--grey), var(--grey)),
+                url('../images/background/tablet-hero@2x.jpg');
+        }
+    }
+
     .board-container{
         gap: 36px;
     }
@@ -1386,7 +1401,7 @@ img {
 
     .board{
         background-image: linear-gradient(var(--grey), var(--grey)),
-            url('../images/background/tablet-hero.jpg');
+            url('../images/background/desktop-hero.jpg');
         padding: 188px 0;
     }
 
@@ -1396,7 +1411,7 @@ img {
     (min-resolution: 2dppx) {
         .board{
             background-image: linear-gradient(var(--grey), var(--grey)),
-                url('../images/background/tablet-hero@2x.jpg');
+                url('../images/background/desktop-hero@2x.jpg');
         }
     }
 
