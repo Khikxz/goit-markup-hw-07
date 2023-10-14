@@ -1420,7 +1420,7 @@ address{
         width: 1158px;
         margin: 0 auto;
     }
-    
+
     .nav-list{
         display: flex;
         gap: 40px;
@@ -1431,7 +1431,7 @@ address{
     }
 
     .header .header-container{
-        width: calc(100% - 312px);
+        width: 1158px;
     }
 
     .header-menu{
